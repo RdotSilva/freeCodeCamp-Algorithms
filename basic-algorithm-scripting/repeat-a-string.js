@@ -16,4 +16,9 @@ function repeatStringNumTimes(str, num) {
 	else return str + repeatStringNumTimes(str, num - 1);
 }
 
+// Declarative solution
+function repeatStringNumTimes(str, num) {
+	return num > 0 ? str.repeat(num) : '';
+}
+
 repeatStringNumTimes('abc', 3);
