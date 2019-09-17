@@ -9,13 +9,17 @@
 // Only integers greater than or equal to zero will be supplied to the function.
 
 function factorialize(num) {
-	var total = num;
-	if (num === 0 || num === 1) return 1;
-	while (num > 1) {
-		num--;
-		total *= num;
+	// Initialize factorial
+	let factorial = 1;
+
+	// Main loop to get factorial
+	while (num > 0) {
+		console.log("Current num: " + num);
+		factorial = factorial * num;
+		console.log("Current factorial: " + factorial);
+		num = num - 1;
 	}
-	return total;
+	return factorial;
 }
 
 factorialize(5);
