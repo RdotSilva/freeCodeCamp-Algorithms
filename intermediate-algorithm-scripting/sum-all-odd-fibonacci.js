@@ -26,14 +26,13 @@ function sumFibs(num) {
 		previousNumber = currentNumber - previousNumber;
 	}
 
-	// Loop through fibNumbers array and add all odd numbers.
-	for (let x = 0; x < fibNumbers.length; x++) {
-		if (fibNumbers[x] % 2 !== 0) {
-			sum += fibNumbers[x];
+	// Add only odd numbers to sum.
+	fibNumbers.forEach(element => {
+		if (element % 2 !== 0) {
+			sum += element;
 		}
-	}
+	});
 	return sum;
 }
 
-// test here
-sumFibs(10);
+console.log(sumFibs(10));
