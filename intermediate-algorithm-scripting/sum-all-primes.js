@@ -18,7 +18,7 @@ function sumPrimes(num) {
 	const primeList = numberList.filter(number => primeCheck(number));
 
 	primeList.forEach(element => {
-		sum = sum + element;
+		sum += element;
 	});
 	console.log(`Original Number List: ${numberList}`);
 	console.log(`Prime Number List: ${primeList}`);
@@ -27,6 +27,8 @@ function sumPrimes(num) {
 }
 
 // Helper function to check if a number is prime.
+// A prime number can be divided evenly only by 1 and by itself.
+// Ex: 2, 3, 5, 7, 11, 13, 17, 19, 23
 const primeCheck = num => {
 	// 1 and 0 are not prime.
 	if (num <= 1) {

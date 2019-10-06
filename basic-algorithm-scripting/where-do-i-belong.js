@@ -2,7 +2,8 @@
 // once it has been sorted. The returned value should be a number.
 
 const getIndexToIns = (arr, num) => {
-	// Sort the array.
+	// Sort the array in ascending order. (Smallest to left)
+	// Sort (negative number sort to left, positive number sort to right, zero equal)
 	let sortedArray = arr.sort((a, b) => a - b);
 
 	// Init counter.
