@@ -7,19 +7,11 @@
 // For example if you mean to replace the word "Book" with the word "dog", it should be replaced as "Dog"
 
 const myReplace = (str, before, after) => {
-	let sentence = str.split(" ");
-
-	for (let i = 0; i < sentence.length; i++) {
-		if (sentence[i] === before) {
-			// Check for upper case
-			if (sentence[i].charAt(0) === sentence[i].charAt(0).toUpperCase()) {
-				sentence[i] = after.charAt(0).toUpperCase() + after.substr(1);
-			} else {
-				sentence[i] = after;
-			}
-		}
+	const firstCharIsUpperCase = before[0] === before[0].toUpperCase();
+	if (firstCharIsUpperCase) {
+		after = after.charAt(0).toUpperCase() + after.substr(1);
 	}
-	return sentence.join(" ");
+	return str.split(" ").map(word => word.toLowerCase() === before.toLowerCase() ? after : word).join(" ");
 };
 
-myReplace("Let us go to the store", "store", "mall");
+myReplace("Let us go to the store", "Store", "mall");
